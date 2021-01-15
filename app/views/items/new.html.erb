@@ -1,8 +1,4 @@
-<%= form_tag('/items', method: :post) do %>
-    <h3>
-      食品を追加する
-    </h3>
-    <input type="text" name="name" placeholder="品名"></br>
-    <input type="text" name="amount" placeholder="数量"></br>
-    <input type="submit" value="SEND">
-  <% end %>
+<%= form_for(@item) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
