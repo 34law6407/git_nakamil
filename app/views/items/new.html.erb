@@ -1,4 +1,8 @@
 <%= form_for(@item) do |f| %>
   <%= f.text_field :name %>
+  <%= f.number_field :amount %>
+  <%= f.select :unit, [ ["個","個"], ["袋","袋" ], ["g", "g" ],["ml","ml"] ], prompt: "単位は？" %>
+  <%= f.select :item_type, [ ["肉",1], ["野菜", 2], ["魚", 3 ], ["その他", 4 ] ], prompt: "品種は？" %>
+  <%= f.date_select :obtain %>
   <%= f.submit %>
 <% end %>
